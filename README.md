@@ -1,6 +1,6 @@
-# Sakila REST API (DVD Rental Store)
+# API FIRST Design
 
-> Project responsible for externalize using REST API approach some resources from [SAKILA](https://www.jooq.org/sakila) project
+> Project responsible for externalize using API First approach
 
 ## Stack:
 * Java 11
@@ -9,32 +9,22 @@
 * Docker
 * logback - melhor formatação dos logs
 
-## Architecture Style
-
-This project is based in a hexagonal architecture. It has basically four layers:
-
-* Application: Main service gate, the currently approach using REST API;
-* Anticorruption: Layer responsible for translate application layer to infrastructure and domain objects.
-* Domain: Basically responsible for encapsulates business rules.
-* Infrastructure: Layer responsible for all app communication. ex.: databases and external services
-
-
 ## How to build
 
 ### Java REST API
 ```bash
 ./gradlew 
 ```
-### Docker images
+### Docker
 ```bash
-docker-compose build;
+docker build -t <usuario>/api-first .
 ```
 ## How to run
 
 ### Docker
 
 ```bash
-docker-compose up --force-recreate
+docker run -it -d -p 8080:8080 <usuario>/api-first
 ```
 
 ## Documentation
@@ -45,51 +35,10 @@ __This app was developed using [open specification](https://github.com/OAI/OpenA
 GET /swagger-ui.html
 ```
 ### Summary
-#### Monitoring
-__Request__:
-```javascript
-GET /actuator
-```
-
 #### Status App
 __Request__:
 ```javascript
 GET /status
-```
-#### Customer
-
-##### By Country
-__Request__:
-```javascript
-GET /v1/customer/country/United%20States
-```
-
-##### By Country and City
-__Request__:
-```javascript
-GET /v1/customer/country/United%20States/city/Manchester
-```
-
-#### Film(DVD)
-
-##### By Actor
-__Request__:
-```javascript
-GET /v1/film/actor/firstName/JENNIFER/lastName/DAVIS
-```
-
-##### By Actor and category(optionally)
-__Request__:
-```javascript
-GET /v1/film/actor/firstName/JENNIFER/lastName/DAVIS?category=Animation    
-```
-
-#### Rental
-
-##### Overdue Rentals
-__Request__:
-```javascript
-GET /v1/rental/overdue    
 ```
 
 ## Next Steps
