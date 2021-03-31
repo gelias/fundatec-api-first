@@ -25,7 +25,7 @@ public class AppStatusControllerTest {
     }
 
     @Test
-    public void shouldGetAppStatusInfo(){
+    public void shouldGetAppStatusInfo() throws Exception {
         AppStatusResponse status = appStatusController.status();
         Assert.assertEquals(String.format("%s_%s_200",APPLICATION_NAME,VERSION), status.toString());
     }

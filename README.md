@@ -32,7 +32,7 @@ docker run -it -d -p 8080:8080 <usuario>/api-first
 __This app was developed using [open specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md) principles. Use the swagger doc to navigate and test the main resources:__
 
 ```javascript
-GET /swagger-ui.html
+GET /api-doc.html
 ```
 ### Summary
 #### Status App

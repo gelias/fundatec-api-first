@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import static org.springframework.http.HttpStatus.OK;
+import static org.springframework.http.HttpStatus.*;
 
 @RestController
-@RequestMapping(value = { "", "/status"})
+@RequestMapping(value = { "", "/app/status"})
 @Tag(name = "status")
 public class AppStatusController {
 
@@ -21,7 +21,7 @@ public class AppStatusController {
     private String applicationName;
 
     @GetMapping(produces = "application/json")
-    public AppStatusResponse status() {
+    public AppStatusResponse status() throws Exception {
         return new AppStatusResponse(applicationName, version, OK.value());
     }
 

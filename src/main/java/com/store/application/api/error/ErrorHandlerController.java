@@ -20,4 +20,5 @@ public class ErrorHandlerController {
         exception.printStackTrace();
         return new ApiErrorResponse(BAD_REQUEST,format("Ops ... some butterfly in stomach right now!. Details: %s",exception.getMessage()));
     }
+
 }
